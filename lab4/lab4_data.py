@@ -85,10 +85,10 @@ class DataSet():
             for p in files], dim=0)
 
         self.images = images / 255
-        # self.x, self.y = prepare_divaide(
-        #     self.images) if div else prepare_edge(self.images)
         self.x, self.y = prepare_divaide(
-            self.images) if div else (self.images, self.images.clone())
+            self.images) if div else prepare_edge(self.images)
+        # self.x, self.y = prepare_divaide(
+        #     self.images) if div else (self.images, self.images.clone())
 
     def augment(self, x, y):
         if self.aug:

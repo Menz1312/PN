@@ -33,7 +33,7 @@ print("Train")
 model.train()
 optimizer = torch.optim.Adam(model.parameters(), lr=0.002)
 
-for epoche in range(7):
+for epoche in range(30):
     err = 0
     true_error = 0
     for step in range(150):
