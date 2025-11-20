@@ -35,7 +35,7 @@ def prepare_edge(data):
         # ma = y.max()
         # y = (y / (ma-mi)) - mi
     # progowanie
-    y = (y>0.4).float()
+    y = (y>0.5).float()
     return data, y
 
 # Dzieli obraz na dwa (zbiór uczący składa się z obrazów, 

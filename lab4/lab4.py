@@ -10,7 +10,7 @@ if 'lab4_data' in sys.modules: del sys.modules['lab4_data']
 from lab4_data import DataSet, show_images, prepare_edge
 
 in_size = 1
-model = Model(x=6, out_size=1, in_size=in_size)
+model = Model(x=32, out_size=1, in_size=in_size)
 model.info()
 # model.load()
 

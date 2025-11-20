@@ -10,14 +10,14 @@ class ConvModel(torch.nn.Module):
         self.activation2 = torch.nn.Sigmoid()
         # self.activation2 = torch.nn.ReLU()
         self.activation = torch.nn.LeakyReLU()
-        # self.pad = torch.nn.ReflectionPad2d(1)
-        self.conv1 = torch.nn.Conv2d(in_size, x, (3,3), padding=1)
-        # self.conv1 = torch.nn.Conv2d(in_size, x, (3,3), padding=0)
+        self.pad = torch.nn.ReflectionPad2d(1)
+        # self.conv1 = torch.nn.Conv2d(in_size, x, (3,3), padding=1)
+        self.conv1 = torch.nn.Conv2d(in_size, x, (3,3), padding=0)
         self.conv2 = torch.nn.Conv2d(x, x, (1,1))
         self.conv3 = torch.nn.Conv2d(x, out_size, (1,1))
 
     def forward(self, x):
-        # x = self.pad(x)
+        x = self.pad(x)
         # x = torch.nn.functional.pad(x, pad=(1, 1, 1, 1), mode='replicate')
 
         x = self.conv1(x)
